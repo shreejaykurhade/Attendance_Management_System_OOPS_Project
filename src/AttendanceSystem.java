@@ -1,5 +1,5 @@
 package src;
-//shravani is here
+//shravani
 import java.util.Scanner;
 
 public class AttendanceSystem {
