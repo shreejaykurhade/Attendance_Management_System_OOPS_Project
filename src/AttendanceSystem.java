@@ -7,7 +7,7 @@ public class AttendanceSystem {
         Scanner scanner = new Scanner(System.in);
 
         Admin admin = new Admin("A001", "Principal");
-        Teacher teacher = new Teacher("T001", "Dr. Williams");
+        Teacher teacher = new Teacher("T001", "Ayesha Maam");
 
         // Main loop for input and actions
         boolean running = true;
