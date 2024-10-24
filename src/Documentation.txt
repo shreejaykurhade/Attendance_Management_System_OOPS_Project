@@ -1,0 +1,42 @@
+
+# Class Diagram
+
+                    User                Subject
+                /    |    \
+        Student   Teacher  Admin
+
+
+
+## User Class
+    + public String getUserId()
+    + public String getName()
+    + public abstract void viewAttendance()
+
+## Teacher Class 
+    + @Override public void viewAttendance()
+    + public void markAttendanceForStudent(Student student, String subjectName, int weekNumber, int attendedLectures)
+
+## Student Class
+    + @Override public void viewAttendance()
+    + public void addSubject(Subject subject)
+    + public void markWeeklyAttendance(String subjectName, int weekNumber, int attendedLectures)
+    + public void generateMonthlyAttendanceReport()
+
+## Admin Class  
+    + @Override public void viewAttendance()
+    + public void addStudent(Student student)
+    + public void deleteStudent(String studentId)
+    + public Student findStudentById(String studentId)
+    + public void generateAttendanceReport()
+
+## Subject class
+    + public Subject(String subjectName, int totalLecturesPerWeek)
+    + public String getSubjectName()   
+    + public void markWeeklyAttendance(int weekNumber, int attendedLectures) 
+    + public int getTotalLecturesForMonth()
+    + public int getTotalAttendedLecturesForMonth()
+    + public double getAttendancePercentage()
+    + public boolean isEligible()
+
+
+    
