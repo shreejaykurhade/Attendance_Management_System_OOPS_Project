@@ -12,7 +12,7 @@ public class AttendanceSystem {
         // Main loop for input and actions
         boolean running = true;
         while (running) {
-            System.out.println("\n1. Mark Weekly Attendance\n2. View Attendance\n3. Generate Monthly Report\n4. Add Student\n5. Delete Student\n6. Exit");
+            System.out.println("\n1. Add Student\n2. Mark Weekly Attendance\n3. View Attendance\n4. Generate Monthly Report\n5. Delete Student\n6. Exit");
             int choice = 0;
             try {
                 choice = scanner.nextInt();
@@ -24,6 +24,27 @@ public class AttendanceSystem {
 
             switch (choice) {
                 case 1:
+                    try {
+                        System.out.println("Enter student ID:");
+                        String newStudentId = scanner.next();
+                        System.out.println("Enter student name:");
+                        String newStudentName = scanner.next();
+
+                        Student newStudent = new Student(newStudentId, newStudentName);
+
+                        // Adding subjects to the student
+                        newStudent.addSubject(new Subject("ITVC", 4));
+                        newStudent.addSubject(new Subject("OOPMT", 3));
+                        newStudent.addSubject(new Subject("Data Structures", 4));
+                        newStudent.addSubject(new Subject("Computer Architecture and Organization", 3));
+
+                        admin.addStudent(newStudent);
+                    } catch (Exception e) {
+                        System.out.println("An error occurred while adding a student: " + e.getMessage());
+                    }
+                    break;
+
+                case 2:
                     try {
                         System.out.println("Enter student ID to mark weekly attendance:");
                         String studentId = scanner.next();
@@ -47,7 +68,7 @@ public class AttendanceSystem {
                     }
                     break;
 
-                case 2:
+                case 3:
                     try {
                         System.out.println("Enter student ID to view attendance:");
                         String viewStudentId = scanner.next();
@@ -64,32 +85,11 @@ public class AttendanceSystem {
                     }
                     break;
 
-                case 3:
+                case 4:
                     try {
                         admin.generateAttendanceReport();
                     } catch (Exception e) {
                         System.out.println("An error occurred while generating the report: " + e.getMessage());
-                    }
-                    break;
-
-                case 4:
-                    try {
-                        System.out.println("Enter student ID:");
-                        String newStudentId = scanner.next();
-                        System.out.println("Enter student name:");
-                        String newStudentName = scanner.next();
-
-                        Student newStudent = new Student(newStudentId, newStudentName);
-
-                        // Adding subjects to the student
-                        newStudent.addSubject(new Subject("ITVC", 4));
-                        newStudent.addSubject(new Subject("OOPMT", 3));
-                        newStudent.addSubject(new Subject("Data Structures", 4));
-                        newStudent.addSubject(new Subject("Computer Architecture and Organization", 3));
-
-                        admin.addStudent(newStudent);
-                    } catch (Exception e) {
-                        System.out.println("An error occurred while adding a student: " + e.getMessage());
                     }
                     break;
 
