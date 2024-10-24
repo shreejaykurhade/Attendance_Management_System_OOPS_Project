@@ -35,8 +35,8 @@ public class AttendanceSystem {
                         // Adding subjects to the student
                         newStudent.addSubject(new Subject("ITVC", 4));
                         newStudent.addSubject(new Subject("OOPMT", 3));
-                        newStudent.addSubject(new Subject("Data Structures", 4));
-                        newStudent.addSubject(new Subject("Computer Architecture and Organization", 3));
+                        newStudent.addSubject(new Subject("DS", 4));
+                        newStudent.addSubject(new Subject("COA", 3));
 
                         admin.addStudent(newStudent);
                     } catch (Exception e) {
